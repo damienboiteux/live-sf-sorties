@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Motos{% endblock %}
+
+{% block body %}
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Départ</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sortie in sorties %}
+                <tr>
+                    <td scope="row">{{sortie.id}}</td>
+                    <td>{{sortie.titre}}</td>
+                    <td>{{sortie.depart}}</td>
+                    <td>{{sortie.date}}</td>
+                    <td>
+                        <a href="{{path('sortie_show',{'id': sortie.id})}}" class="btn btn-primary">Détails</a>
+                        <a href="{{ path('sortie_edit',{'id': sortie.id})}}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('sortie_delete',{'id': sortie.id})}}" class="btn btn-primary">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('sortie_create')}}" class="btn btn-primary">Ajouter une sortie</a>
+
+{% endblock %}

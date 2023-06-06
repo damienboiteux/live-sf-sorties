@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modeles{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">ID</th>
+                <td>{{modele.id}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Nom</th>
+                <td>{{modele.libelle}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('modele_index')}}" class="btn btn-primary">Retour à la liste</a>
+
+{% endblock %}

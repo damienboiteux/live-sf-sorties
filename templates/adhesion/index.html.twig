@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adhésions{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Année</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for adhesion in adhesions %}
+                <tr>
+                    <td scope="row">{{adhesion.id}}</td>
+                    <td>{{adhesion.libelle}}</td>
+                    <td>
+                        <a href="{{path('adhesion_show',{'id': adhesion.id})}}" class="btn btn-primary">Détails</a>
+                        <a href="{{ path('adhesion_edit',{'id': adhesion.id})}}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('adhesion_delete',{'id': adhesion.id})}}" class="btn btn-primary">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('adhesion_create')}}" class="btn btn-primary">Ajouter une adhésion</a>
+
+{% endblock %}
