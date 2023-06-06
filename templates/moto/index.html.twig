@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sorties{% endblock %}
+
+{% block body %}
+
+        <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for moto in motos %}
+                <tr>
+                    <td scope="row">{{moto.id}}</td>
+                    <td>{{moto.libelle}}</td>
+                    <td>
+                        <a href="{{path('moto_show',{'id': moto.id})}}" class="btn btn-primary">Détails</a>
+                        <a href="{{ path('moto_edit',{'id': moto.id})}}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('moto_delete',{'id': moto.id})}}" class="btn btn-primary">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('moto_create')}}" class="btn btn-primary">Ajouter une moto</a>
+
+
+{% endblock %}

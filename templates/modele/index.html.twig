@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modèles{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Marque</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for modele in modeles %}
+                <tr>
+                    <td scope="row">{{modele.id}}</td>
+                    <td>{{modele.libelle}}</td>
+                    <td>{{modele.marque.libelle}}</td>
+                    <td>
+                        <a href="{{path('modele_show',{'id': modele.id})}}" class="btn btn-primary">Détails</a>
+                        <a href="{{ path('modele_edit',{'id': modele.id})}}" class="btn btn-primary">Modifier</a>
+                        <a href="{{ path('modele_delete',{'id': modele.id})}}" class="btn btn-primary">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('modele_create')}}" class="btn btn-primary">Ajouter un modèle</a>
+
+{% endblock %}

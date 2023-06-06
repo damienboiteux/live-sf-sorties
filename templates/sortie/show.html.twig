@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sortie{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">ID</th>
+                <td>{{sortie.id}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Titre</th>
+                <td>{{sortie.libelle}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Description</th>
+                <td>{{sortie.description}}</td>
+            </tr>
+            <tr>
+                <th scope="row">Lieu de départ</th>
+                <td>{{sortie.depart}}</td>
+            </tr>
+                        <tr>
+                <th scope="row">Date</th>
+                <td>{{sortie.date}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <a href="{{ path('sortie_index')}}" class="btn btn-primary">Retour à la liste</a>
+
+{% endblock %}
