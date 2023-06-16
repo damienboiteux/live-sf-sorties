@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marques{% endblock %}
+
+{% block body %}
+
+    {# {{ form(formView)}} #}
+
+    {{ form_start(formView, {attr: {'novalidate' : 'novalidate'}}) }}
+        {{form_row(formView.libelle)}}
+        {# {{form_errors(formView.libelle)}}
+        {{form_widget(formView.libelle)}}
+        {{form_help(formView.libelle)}}
+        {{form_label(formView.libelle)}} #}
+        <button class="btn btn-primary">Valider</button>
+    {{ form_end(formView) }}
+    
+
+    <a href="{{ path('marque_index')}}" class="btn btn-primary">Retour à la liste</a>
+
+{% endblock %}
