@@ -16,6 +16,8 @@ class Marque
     private ?int $id = null;
 
     #[ORM\Column(length: 32)]
+    // #[Assert\NotBlank(message: 'Veuillez saisir une marque')]
+    // #[Assert\Length(max: 32, maxMessage: 'La marque ne peut pas dépasser {{ limit }} caractères')]
     private ?string $libelle = null;
 
     #[ORM\OneToMany(mappedBy: 'marque', targetEntity: Modele::class)]
