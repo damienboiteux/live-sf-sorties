@@ -18,12 +18,12 @@ class MarqueType extends AbstractType
     {
         $builder
             ->add('libelle', TextType::class, [
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Veuillez saisir une marque',
-                    ]),
-                ],
-                'required' => true,
+                // 'constraints' => [
+                //     new NotBlank([
+                //         'message' => 'Veuillez saisir une marque',
+                //     ]),
+                // ],
+                // 'required' => true,
             ])
             // ->add('submit', SubmitType::class)
         ;

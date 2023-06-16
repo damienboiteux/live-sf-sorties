@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modeles{% endblock %}
+
+{% block body %}
+
+    <h1>Création d'un modèle</h1>
+
+    {% include "modele/_form.html.twig" %}
+
+    <a href="{{ path('modele_index')}}" class="btn btn-primary">Retour à la liste</a>
+
+{% endblock %}
